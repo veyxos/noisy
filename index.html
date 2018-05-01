@@ -46,7 +46,7 @@
 
 	<!-- Code helper function -->
 	<script async>
-		fetch('/app.ts').then(res => {
+		fetch('./app.ts').then(res => {
 			res.text().then(text => {
 				// console.log(text);
 				const code = document.querySelector('#code');
