@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0, width=device-width">
+	<title>Noisy</title>
+	<!-- Highlight.js -->
+	<link rel="stylesheet" href="highlight/styles/atom-one-light.css">
+	<script src="highlight/highlight.pack.js"></script>
+	<!-- CSS -->
+	<link rel="stylesheet" href="app.css">
+	<!-- JavaScript -->
+	<script src="app.js" async></script>
+</head>
+<body>
+	<!-- Header -->
+	<h1 id="title">Noisy</h1>
+	<h4 id="subtitle"><em>Just another odd example for the Perlin Noise algorithm</em></h4>
+
+	<!-- drawing canvas -->
+	<div id="canvasWrapper">
+		<div id="canvasHelper">
+			<canvas id="canvas" width="800" height="600"></canvas>
+		</div>
+	</div>
+
+	<!-- code -->
+	<pre id="code_wrapper"><code class="typescript" id="code">
+		throw new Error('Ooops. Something went terribly wrong');
+	</code></pre>
+
+	<!-- explaination -->
+	<div id="explaination">
+		<h2>Erklärung</h2>
+		<p>Lorem ipsum dolor amet fixie poke irony, cliche authentic wayfarers vexillologist 8-bit cold-pressed. Cornhole raw denim gochujang, austin meditation polaroid coloring book banh mi shoreditch knausgaard activated charcoal man bun art party drinking vinegar bitters. Wayfarers franzen banjo retro farm-to-table chia. Cred schlitz tumeric fanny pack literally cardigan knausgaard, tattooed bushwick vinyl williamsburg beard hot chicken meggings cliche. Microdosing crucifix snackwave retro cardigan farm-to-table.</p>
+		<p>Blog crucifix health goth flexitarian letterpress chicharrones tattooed. Health goth tumblr YOLO, shaman helvetica whatever flannel. Cray authentic succulents jianbing +1 scenester vegan raclette retro pitchfork master cleanse gastropub truffaut. Edison bulb biodiesel woke photo booth polaroid twee. Four loko ramps pitchfork coloring book enamel pin edison bulb copper mug plaid vaporware. Asymmetrical la croix live-edge, meditation chillwave austin kombucha organic bushwick raw denim seitan cliche twee kogi. YOLO pickled before they sold out flannel four dollar toast helvetica.</p>
+	</div>
+	
+	<!-- Footer -->
+	<footer id="footer">
+		<p id="copyright">&copy; 2018 Mike Kühnapfel</p>
+		<ul id="footer_links">
+			<li><a href="https://www.th-koeln.de">TH Köln</a></li>
+		</ul>
+	</footer>
+
+	<!-- Code helper function -->
+	<script async>
+		fetch('/app.ts').then(res => {
+			res.text().then(text => {
+				// console.log(text);
+				const code = document.querySelector('#code');
+				code.innerText = text;
+				hljs.highlightBlock(code);
+			}).catch(err => console.error(err));
+		}).catch(err => console.error(err));
+	</script>
+</body>
+</html>
